@@ -120,6 +120,155 @@ h4 {
   margin-bottom: 2rem;
 }
 
+
+/* animation */
+
+@keyframes nav-btn-anim {
+
+  0%
+  {
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(2);
+  }
+
+  100%
+  {
+    transform: scale(1);
+  }
+  
+}
+
+
+@keyframes slide-from-top {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+}
+
+
+@keyframes slide-from-bottom {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+}
+/* end of animation */
+
+
+
+
+
+
+
+
+
+/* navbar*/
+.nav-btn
+{
+  font-size: 2rem;
+  color:var(--clr-primary);
+  position: fixed;
+  top:5%;
+  right:4%;
+  z-index:1;
+  cursor: pointer;
+  animation: nav-btn-anim 2s ease ;
+  
+}
+
+.navbar
+{
+  position: fixed;
+  top:0;
+  right:0;
+  background: var(--clr-gray-10);
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  box-shadow:2px 0 2px rgba(0,0,0,0.2) ;
+
+  transition: var(--transition);
+  transform: translateX(100%);
+}
+
+.show-nav
+{
+   transform: translateX(0);
+}
+
+
+@media screen and (min-width: 768px) {
+  .navbar
+{
+  width: 30vw;
+  max-width: 20rem;
+}
+  
+}
+
+.nav-header{
+text-align: left;
+}
+
+.nav-close
+{
+  font-size: 2rem;
+  color: rgb(253, 117, 117);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-close:hover
+{
+  color: rgb(143, 0, 0);
+}
+
+.nav-item
+{
+  list-style-type: none;
+  direction: rtl;
+}
+
+.nav-link
+{
+  display: block;
+  padding: 0.5rem 1rem ;
+  color: var(--clr-gray-5);
+  transition: var(--transition);
+}
+
+.nav-link:hover
+{
+  color: var(--clr-gray-1);
+ background: var(--clr-primary-light);
+ border-right: 0.4rem solid  var(--clr-primary);
+}
+
+.nav-link i{
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+
+
+
+/* end of navbar*/
 /* header */
 
 .header {
@@ -141,18 +290,21 @@ h4 {
 .banner h1 {
   color: var(--clr-primary);
   margin-bottom: 2rem;
+  animation: slide-from-top 3s ease;
 }
 
 .banner h2 {
   color: var(--clr-primary-light);
   margin-bottom: 3rem;
   padding-inline: 1rem;
+  animation: slide-from-bottom 3s ease;
 }
 
 .btn-banner {
   font-size: 1.25rem;
   outline: 0.125rem solid var(--clr-primary);
   outline-offset: 0.25rem;
+  animation: slide-from-bottom 3s ease;
 }
 
 .btn-banner:hover {
@@ -416,32 +568,32 @@ h4 {
 /* end of services */
 
 
-/* contract_us */
+/* contact_us */
 
-.contract-us
+.contact-us
 {
   background: var(--clr-gray-10);
 }
 
-.contract-title
+.contact-title
 {
   margin-bottom: 1rem;
   direction: rtl;
 }
-.contract-icon
+.contact-icon
 {
   color: var(--clr-primary);
 }
 
-.contract-title h4{
+.contact-title h4{
   color: var(--clr-primary);
 }
-.contract-title p
+.contact-title p
 {
   font-size: 1.1rem;
 }
 
-.contract-form
+.contact-form
 {
   text-align: center;
   background: var(--clr-white);
@@ -450,12 +602,12 @@ h4 {
   transition: var(--transition);
   max-width:30rem ;
 }
-.contract-form:hover
+.contact-form:hover
 {
  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.contract-form h3{
+.contact-form h3{
   text-align: center;
   color: var(--clr-gray-5);
   padding: 1rem 2rem;
@@ -490,13 +642,13 @@ h4 {
 }
 
 @media screen and (min-width :768px) {
-  .contract-info
+  .contact-info
   {
     float: right;
     width: 50%;
   }
 
-  .contract-form
+  .contact-form
   {
     float: left;
     width: 50%;
